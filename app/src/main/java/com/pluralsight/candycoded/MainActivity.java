@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, String response) {
                         Log.d("AsyncHttpClient", "response = " + response);
                         Gson gson = new GsonBuilder().create();
-                        ;
+
                         candies = gson.fromJson(response, Candy[].class);
 
                         addCandiesToDatabase(candies);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.info) {
             Intent infoIntent = new Intent(this, InfoActivity.class);
             startActivity(infoIntent);
-            return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
