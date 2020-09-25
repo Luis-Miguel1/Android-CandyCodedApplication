@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 public class InfoActivity extends AppCompatActivity {
     TextView text_view_address;
+    String SHARE_DESCRIPTION, mCandyImageUrl, HASHTAG_CANDYCODED;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
+
     public void createMapIntent(View view) {
         Uri uri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
 
@@ -42,10 +45,12 @@ public class InfoActivity extends AppCompatActivity {
     }
 
 
-    public void createPhoneIntent(View view){
+    public void createPhoneIntent(View view) {
         Uri uri = Uri.parse("tel:0123456789");
         Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
         phoneIntent.setData(uri);
         startActivity(phoneIntent);
     }
+
+
 }
